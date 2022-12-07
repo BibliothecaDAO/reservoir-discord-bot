@@ -31,7 +31,10 @@ import constants from "./utils/constants";
       throw new Error("Missing env vars");
     }
 
-    const REDIS_URL = { port: REDIS_PORT, host: REDIS_HOST };
+    const REDIS_URL = constants.REDIS_URL || {
+      port: REDIS_PORT,
+      host: REDIS_HOST,
+    };
 
     // Setup Discord
     const discord = new Discord(TOKEN, RESERVOIR_API_KEY, REDIS_URL);

@@ -16,5 +16,6 @@ export default {
   ALERT_CONTRACT: "0x7afe30cb3e53dba6801aa0ea647a0ecea7cbe18d",
   APPLICATION_ID: process.env.DISCORD_APP_ID as string,
   REDIS_HOST: process.env.REDIS_HOST ?? "127.0.0.1",
-  REDIS_PORT: process.env.REDIS_PORT ? parseInt(process.env.REDIS_PORT) : 6379
+  REDIS_PORT: process.env.REDIS_PORT ? parseInt(process.env.REDIS_PORT) : 6379,
+  REDIS_URL: process.env.REDIS_URL ?? ""
 };
