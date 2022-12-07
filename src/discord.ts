@@ -38,7 +38,7 @@ export default class Discord {
    * @param {string} apiKey Reservoir API Key
    * @param {object} redisURL Redis connection url
    */
-  constructor(token: string, apiKey: string, redisURL: {}) {
+  constructor(token: string, apiKey: string, redisURL: {} | string) {
     this.token = token;
     this.apiKey = apiKey;
     this.redisURL = redisURL;
