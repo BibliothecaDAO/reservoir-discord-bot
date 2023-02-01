@@ -64,13 +64,22 @@ export default class Discord {
       salePoll(salesChannel, constants.TRACKED_CONTRACTS, this.apiKey, redis),
       floorPoll(mainChannel, constants.ALERT_CONTRACT, this.apiKey, redis),
       bidPoll(mainChannel, constants.ALERT_CONTRACT, this.apiKey, redis),
-    ]).then(() => {
-      // Collecting new data in 1s
-      setTimeout(
-        () => this.poll(listingChannel, salesChannel, mainChannel, redis),
-        1000
-      );
-    });
+    ])
+      .then(() => {
+        // Collecting new data in 1s
+        setTimeout(
+          () => this.poll(listingChannel, salesChannel, mainChannel, redis),
+          1000
+        );
+      })
+      .catch((e) => {
+        logger.error(`Error polling`);
+        logger.error(e);
+        setTimeout(
+          () => this.poll(listingChannel, salesChannel, mainChannel, redis),
+          1000
+        );
+      });
   }
 
   /**
