@@ -167,5 +167,6 @@ export async function salePoll(
     await redis.set("saleorderid", sales[0].saleId);
   } catch (e) {
     logger.error(`Error ${e} updating new sales`);
+    logger.error(e);
   }
 }
