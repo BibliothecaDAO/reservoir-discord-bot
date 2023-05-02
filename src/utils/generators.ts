@@ -5,7 +5,7 @@ import {
   AttachmentBuilder,
 } from "discord.js";
 import constants from "./constants";
-import { paths } from "@reservoir0x/reservoir-sdk";
+import { paths } from "@reservoir0x/reservoir-kit-client";
 import logger from "./logger";
 import { SelectMenuType } from "./types";
 import handleMediaConversion from "./media";

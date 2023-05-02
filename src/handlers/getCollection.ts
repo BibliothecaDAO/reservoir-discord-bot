@@ -1,5 +1,5 @@
 const sdk = require("api")("@reservoirprotocol/v1.0#6e6s1kl9rh5zqg");
-import { paths } from "@reservoir0x/reservoir-sdk";
+import { paths } from "@reservoir0x/reservoir-kit-client";
 import dotenv from "dotenv";
 import logger from "../utils/logger";
 

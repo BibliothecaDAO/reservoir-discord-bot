@@ -6,7 +6,7 @@ import {
   ButtonBuilder,
   ChannelType,
 } from "discord.js";
-import { paths } from "@reservoir0x/reservoir-sdk";
+import { paths } from "@reservoir0x/reservoir-kit-client";
 import logger from "../utils/logger";
 import constants from "../utils/constants";
 const sdk = require("api")("@reservoirprotocol/v1.0#6e6s1kl9rh5zqg");

@@ -6,7 +6,7 @@ import {
   EmbedBuilder,
   TextChannel,
 } from "discord.js";
-import { paths } from "@reservoir0x/reservoir-sdk";
+import { paths } from "@reservoir0x/reservoir-kit-client";
 import logger from "../utils/logger";
 import handleMediaConversion from "../utils/media";
 import constants from "../utils/constants";
