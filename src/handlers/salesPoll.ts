@@ -49,8 +49,11 @@ export async function salePoll(
         accept: "*/*",
       });
 
+    console.log(salesResponse)
     // Getting the most recent sales event
     const sales = salesResponse.sales;
+
+
 
     // Log failure + return if floor event couldn't be pulled
     if (!sales) {
