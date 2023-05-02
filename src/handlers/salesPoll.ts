@@ -11,7 +11,7 @@ import logger from "../utils/logger";
 import handleMediaConversion from "../utils/media";
 import getCollection from "./getCollection";
 import constants from "../utils/constants";
-const sdk = require("api")("@reservoirprotocol/v1.0#6e6s1kl9rh5zqg");
+const sdk = require('api')('@reservoirprotocol/v3.0#2l6fslh5fu4vc');
 
 /**
  * Check sales to see if there are new ones since the last alert

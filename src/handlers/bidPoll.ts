@@ -6,11 +6,11 @@ import {
   ButtonBuilder,
   ChannelType,
 } from "discord.js";
-import { paths } from "@reservoir0x/reservoir-sdk";
+import { paths, getClient, operations } from "@reservoir0x/reservoir-sdk";
 import logger from "../utils/logger";
 import constants from "../utils/constants";
 import getCollection from "./getCollection";
-const sdk = require("api")("@reservoirprotocol/v1.0#6e6s1kl9rh5zqg");
+const sdk = require('api')('@reservoirprotocol/v3.0#2l6fslh5fu4vc');
 
 /**
  * Check top bid events to see if a new one was created since last alert
@@ -38,7 +38,6 @@ export async function bidPoll(
   try {
     // Authorizing with Reservoir API Key
     await sdk.auth(apiKey);
-
     // Getting top bid events from Reservoir
     const topBidResponse: paths["/events/collections/top-bid/v1"]["get"]["responses"]["200"]["schema"] =
       await sdk.getEventsCollectionsTopbidV1({
