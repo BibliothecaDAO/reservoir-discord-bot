@@ -41,7 +41,7 @@ export async function salePoll(
     await sdk.auth(apiKey);
 
     // Getting floor ask events from Reservoir
-    const salesResponse: paths["/sales/v5"]["get"]["responses"]["200"]["schema"] =
+    const salesResponse: any =
       await sdk.getSalesV5({
         contract: contractArray,
         includeTokenMetadata: "true",
@@ -51,7 +51,7 @@ export async function salePoll(
 
     console.log(salesResponse)
     // Getting the most recent sales event
-    const sales = salesResponse.sales;
+    const sales = salesResponse.data.sales;
 
 
 
