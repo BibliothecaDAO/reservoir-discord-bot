@@ -82,7 +82,7 @@ export async function salePoll(
     }
 
     const cachedListingIndex =
-      sales.findIndex((order) => {
+      sales.findIndex((order: any) => {
         return order.saleId === cachedId;
       }) - 1;
 

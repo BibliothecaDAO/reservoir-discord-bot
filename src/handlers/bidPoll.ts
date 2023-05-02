@@ -39,7 +39,7 @@ export async function bidPoll(
     // Authorizing with Reservoir API Key
     await sdk.auth(apiKey);
     // Getting top bid events from Reservoir
-    const topBidResponse: paths["/events/collections/top-bid/v1"]["get"]["responses"]["200"]["schema"] =
+    const topBidResponse: any =
       await sdk.getEventsCollectionsTopbidV1({
         collection: contractAddress,
         sortDirection: "desc",
@@ -48,7 +48,7 @@ export async function bidPoll(
       });
 
     // Getting the most recent top bid event
-    const topBid = topBidResponse.events?.[0];
+    const topBid = topBidResponse.data.events?.[0];
 
     // Log failure + return if top bid event couldn't be pulled
     if (

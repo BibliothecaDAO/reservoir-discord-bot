@@ -39,7 +39,7 @@ export default async function getCollection(
     await sdk.auth(process.env.RESERVOIR_API_KEY);
 
     // Pull collection data from Reservoir
-    const searchDataResponse: paths["/collections/v5"]["get"]["responses"]["200"]["schema"] =
+    const searchDataResponse: any =
       await sdk.getCollectionsV5({
         ...selector,
         includeTopBid: includeTopBid,
@@ -49,7 +49,7 @@ export default async function getCollection(
       });
 
     // Return array of collections
-    return searchDataResponse.collections;
+    return searchDataResponse.data.collections;
   } catch (e) {
     // Log failure + throw on error
     logger.error(

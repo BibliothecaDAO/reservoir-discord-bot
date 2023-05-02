@@ -39,7 +39,7 @@ export async function floorPoll(
     await sdk.auth(apiKey);
 
     // Getting floor ask events from Reservoir
-    const floorAskResponse: paths["/events/collections/floor-ask/v2"]["get"]["responses"]["200"]["schema"] =
+    const floorAskResponse: any =
       await sdk.getEventsCollectionsFlooraskV2({
         collection: contractAddress,
         sortDirection: "desc",
@@ -48,7 +48,7 @@ export async function floorPoll(
       });
 
     // Getting the most recent floor ask event
-    const floorAsk = floorAskResponse.events?.[0];
+    const floorAsk = floorAskResponse.data.events?.[0];
 
     // Log failure + return if floor event couldn't be pulled
     if (
