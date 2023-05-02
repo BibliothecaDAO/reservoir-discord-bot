@@ -41,8 +41,8 @@ export async function salePoll(
     await sdk.auth(apiKey);
 
     // Getting floor ask events from Reservoir
-    const salesResponse: paths["/sales/v4"]["get"]["responses"]["200"]["schema"] =
-      await sdk.getSalesV4({
+    const salesResponse: paths["/sales/v5"]["get"]["responses"]["200"]["schema"] =
+      await sdk.getSalesV5({
         contract: contractArray,
         includeTokenMetadata: "true",
         limit: "100",

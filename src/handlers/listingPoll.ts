@@ -40,8 +40,8 @@ export async function listingPoll(
     await sdk.auth(apiKey);
 
     // Getting floor ask events from Reservoir
-    const listingResponse: paths["/orders/asks/v3"]["get"]["responses"]["200"]["schema"] =
-      await sdk.getOrdersAsksV3({
+    const listingResponse: paths["/orders/asks/v4"]["get"]["responses"]["200"]["schema"] =
+      await sdk.getOrdersAsksV4({
         contracts: contractArray,
         includePrivate: "false",
         includeMetadata: "true",

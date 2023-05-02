@@ -39,8 +39,8 @@ export async function floorPoll(
     await sdk.auth(apiKey);
 
     // Getting floor ask events from Reservoir
-    const floorAskResponse: paths["/events/collections/floor-ask/v1"]["get"]["responses"]["200"]["schema"] =
-      await sdk.getEventsCollectionsFlooraskV1({
+    const floorAskResponse: paths["/events/collections/floor-ask/v2"]["get"]["responses"]["200"]["schema"] =
+      await sdk.getEventsCollectionsFlooraskV2({
         collection: contractAddress,
         sortDirection: "desc",
         limit: 1,
@@ -103,7 +103,7 @@ export async function floorPoll(
       // setting updated floor ask price
       const priceSuccess: "OK" = await redis.set(
         "floorprice",
-        floorAsk.floorAsk.price
+        floorAsk.floorAsk.price.amount?.native || ''
       );
 
       // Log failure + return if floor ask info couldn't be set
