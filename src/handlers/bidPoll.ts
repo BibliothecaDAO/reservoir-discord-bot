@@ -6,7 +6,7 @@ import {
   ButtonBuilder,
   ChannelType,
 } from "discord.js";
-import { paths } from "@reservoir0x/reservoir-kit-client";
+import { paths } from "@reservoir0x/reservoir-sdk";
 import logger from "../utils/logger";
 import constants from "../utils/constants";
 import getCollection from "./getCollection";
@@ -120,8 +120,7 @@ export async function bidPoll(
           iconURL: bidCollection.image ?? constants.RESERVOIR_ICON,
         })
         .setDescription(
-          `The top bid on the collection just changed to ${
-            topBid.topBid.price
+          `The top bid on the collection just changed to ${topBid.topBid.price
           }Ξ made by [${topBid.topBid.maker.substring(
             0,
             6

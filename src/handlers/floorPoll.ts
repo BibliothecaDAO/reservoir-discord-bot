@@ -6,7 +6,7 @@ import {
   ButtonBuilder,
   ChannelType,
 } from "discord.js";
-import { paths } from "@reservoir0x/reservoir-kit-client";
+import { paths } from "@reservoir0x/reservoir-sdk";
 import logger from "../utils/logger";
 import constants from "../utils/constants";
 const sdk = require("api")("@reservoirprotocol/v1.0#6e6s1kl9rh5zqg");
@@ -79,9 +79,9 @@ export async function floorPoll(
     // On X% change in floor ask override alert cooldown
     if (
       Number(cachedPrice) / Number(floorAsk.floorAsk.price) >
-        1 + constants.PRICE_CHANGE_OVERRIDE ||
+      1 + constants.PRICE_CHANGE_OVERRIDE ||
       Number(cachedPrice) / Number(floorAsk.floorAsk.price) <
-        1 - constants.PRICE_CHANGE_OVERRIDE
+      1 - constants.PRICE_CHANGE_OVERRIDE
     ) {
       eventCooldown = null;
     }
@@ -161,15 +161,12 @@ export async function floorPoll(
           iconURL: `${floorToken.token.collection.image}`,
         })
         .setDescription(
-          `${floorToken.token.name} is now the floor token, listed for ${
-            floorAsk.floorAsk.price
+          `${floorToken.token.name} is now the floor token, listed for ${floorAsk.floorAsk.price
           }Ξ by [${floorToken.token.owner.substring(
             0,
             6
-          )}](https://www.reservoir.market/address/${
-            floorToken.token.owner
-          })\nLast Sale: ${floorToken.token.lastSell.value ?? "N/A"}${
-            floorToken.token.lastSell.value ? "Ξ" : ""
+          )}](https://www.reservoir.market/address/${floorToken.token.owner
+          })\nLast Sale: ${floorToken.token.lastSell.value ?? "N/A"}${floorToken.token.lastSell.value ? "Ξ" : ""
           }\nRarity Rank: ${floorToken.token.rarityRank}`
         )
         .addFields(attributes)
