@@ -596,10 +596,10 @@
     marked "^4.3.0"
     mustache "^4.2.0"
 
-"@reservoir0x/reservoir-sdk@^0.9.2":
-  version "0.9.2"
-  resolved "https://registry.yarnpkg.com/@reservoir0x/reservoir-sdk/-/reservoir-sdk-0.9.2.tgz#1440ea8fcb3b5e3cf23c0c5bc53219a743c02f8f"
-  integrity sha512-4i88lvbU29uuAV32wFBlDK+WvIcDblliOBFljx6GZdmXV0vZEmhfqsnp9SDGFvIp7BeySJcya4+4v6vBgALywA==
+"@reservoir0x/reservoir-sdk@^1.5.1":
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/@reservoir0x/reservoir-sdk/-/reservoir-sdk-1.5.1.tgz#891cc85d4226088c19726e139db39713d3531155"
+  integrity sha512-MccQgmSsYuIBLlZW4LqrUIv32xYWTaltEGymxgeHf2akuv55KBGvneTLwtdW7S+HsH4CE8Ll0E6Ud1U/4dXZbg==
   dependencies:
     axios "^0.27.2"
 

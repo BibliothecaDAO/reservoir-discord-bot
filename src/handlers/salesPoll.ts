@@ -11,7 +11,7 @@ import logger from "../utils/logger";
 import handleMediaConversion from "../utils/media";
 import getCollection from "./getCollection";
 import constants from "../utils/constants";
-const sdk = require('api')('@reservoirprotocol/v3.0#2l6fslh5fu4vc');
+const sdk = require('api')('@reservoirprotocol/v3.0#axfpg1ilnet08rx');
 
 /**
  * Check sales to see if there are new ones since the last alert
@@ -42,7 +42,7 @@ export async function salePoll(
 
     // Getting floor ask events from Reservoir
     const salesResponse: any =
-      await sdk.getSalesV5({
+      await sdk.getSalesV6({
         contract: contractArray,
         includeTokenMetadata: "true",
         limit: "100",
