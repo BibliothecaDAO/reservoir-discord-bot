@@ -69,7 +69,7 @@ export default class Discord {
         // Collecting new data in 1s
         setTimeout(
           () => this.poll(listingChannel, salesChannel, mainChannel, redis),
-          1000
+          10000
         );
       })
       .catch((e) => {
@@ -77,7 +77,7 @@ export default class Discord {
         logger.error(e);
         setTimeout(
           () => this.poll(listingChannel, salesChannel, mainChannel, redis),
-          1000
+          10000
         );
       });
   }

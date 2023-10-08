@@ -137,11 +137,6 @@ export async function salePoll(
       const salesEmbed = new EmbedBuilder()
         .setColor(0x8b43e0)
         .setTitle(`${sales[i].token?.name} has been sold!`)
-        .setAuthor({
-          name: `${sales[i].token?.collection?.name}`,
-          url: `https://forgotten.market/${sales[i].token?.contract}`,
-          iconURL: `attachment://${authorIcon.name}`,
-        })
         .setDescription(
           `Item: ${sales[i].token?.name}\nPrice: ${sales[i].price?.amount?.native}Ξ ($${sales[i].price?.amount?.usd})\nBuyer: ${sales[i].to}\nSeller: ${sales[i].from}`
         )
