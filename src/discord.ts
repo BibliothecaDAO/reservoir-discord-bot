@@ -62,8 +62,8 @@ export default class Discord {
         redis
       ),
       salePoll(salesChannel, constants.TRACKED_CONTRACTS, this.apiKey, redis),
-      floorPoll(mainChannel, constants.ALERT_CONTRACT, this.apiKey, redis),
-      bidPoll(mainChannel, constants.ALERT_CONTRACT, this.apiKey, redis),
+      // floorPoll(mainChannel, constants.ALERT_CONTRACT, this.apiKey, redis),
+      // bidPoll(mainChannel, constants.ALERT_CONTRACT, this.apiKey, redis),
     ])
       .then(() => {
         // Collecting new data in 1s

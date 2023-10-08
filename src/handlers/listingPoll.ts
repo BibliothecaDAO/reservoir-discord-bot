@@ -157,7 +157,7 @@ export async function listingPoll(
         .setTitle(`${tokenDetails.name?.trim()} has been listed!`)
         .setAuthor({
           name: `${tokenDetails.collection.name}`,
-          url: `https://forgotten.market/${tokenDetails.contract}`,
+          url: `https://realms.world/collection/0x7afe30cb3e53dba6801aa0ea647a0ecea7cbe18d`,
           iconURL: `attachment://${authorIcon.name}`,
         })
         .setDescription(
@@ -177,7 +177,7 @@ export async function listingPoll(
           .setLabel("Purchase")
           .setStyle(5)
           .setURL(
-            `https://forgotten.market/${tokenDetails.contract}/${tokenDetails.tokenId}`
+            `https://realms.world/collection/0x7afe30cb3e53dba6801aa0ea647a0ecea7cbe18d/${tokenDetails.tokenId}`
           )
       );
       channel.send({
