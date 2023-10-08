@@ -55,12 +55,12 @@ export default class Discord {
   ): Promise<void> {
     // Call polling functions
     await Promise.allSettled([
-      listingPoll(
-        listingChannel,
-        constants.TRACKED_CONTRACTS,
-        this.apiKey,
-        redis
-      ),
+      // listingPoll(
+      //   listingChannel,
+      //   constants.TRACKED_CONTRACTS,
+      //   this.apiKey,
+      //   redis
+      // ),
       salePoll(salesChannel, constants.TRACKED_CONTRACTS, this.apiKey, redis),
       // floorPoll(mainChannel, constants.ALERT_CONTRACT, this.apiKey, redis),
       // bidPoll(mainChannel, constants.ALERT_CONTRACT, this.apiKey, redis),
