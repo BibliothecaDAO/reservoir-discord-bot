@@ -53,33 +53,19 @@ export default class Discord {
     mainChannel: any,
     redis: Redis
   ): Promise<void> {
-    // Call polling functions
-    await Promise.allSettled([
-      // listingPoll(
-      //   listingChannel,
-      //   constants.TRACKED_CONTRACTS,
-      //   this.apiKey,
-      //   redis
-      // ),
-      salePoll(salesChannel, constants.TRACKED_CONTRACTS, this.apiKey, redis),
-      // floorPoll(mainChannel, constants.ALERT_CONTRACT, this.apiKey, redis),
-      // bidPoll(mainChannel, constants.ALERT_CONTRACT, this.apiKey, redis),
-    ])
-      .then(() => {
-        // Collecting new data in 1s
-        setTimeout(
-          () => this.poll(listingChannel, salesChannel, mainChannel, redis),
-          10000
-        );
-      })
-      .catch((e) => {
-        logger.error(`Error polling`);
-        logger.error(e);
-        setTimeout(
-          () => this.poll(listingChannel, salesChannel, mainChannel, redis),
-          10000
-        );
-      });
+    try {
+      // Example: Uncomment and adjust as per your requirement.
+      // await listingPoll(listingChannel, constants.TRACKED_CONTRACTS, this.apiKey, redis);
+      await salePoll(salesChannel, constants.TRACKED_CONTRACTS, this.apiKey, redis);
+      // await floorPoll(mainChannel, constants.ALERT_CONTRACT, this.apiKey, redis);
+      // await bidPoll(mainChannel, constants.ALERT_CONTRACT, this.apiKey, redis);
+    } catch (e) {
+      logger.error(`Error polling`);
+      logger.error(e);
+    } finally {
+      // Adjust delay as per your requirement
+      setTimeout(() => this.poll(listingChannel, salesChannel, mainChannel, redis), 10000);
+    }
   }
 
   /**
